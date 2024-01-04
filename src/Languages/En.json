@@ -1,0 +1,16 @@
+{
+    "id":"en-EN",
+    "lang":"en" ,
+    "back":"back",
+    "movie":"Movies",
+    "tv":"Tv",
+    "populars":"Populars",
+    "search":"search",
+    "mymovies":"My Movies",
+    "options":"Options",
+    "producedby":"Producer(s)",
+    "genre":"genres",
+    "launched":"launched",
+    "overview":"Overview",
+    "nothingsaved":"There's nothing saved over here, explore and save your movies to watch it later!"
+}

@@ -1,0 +1,16 @@
+{
+ "id":"es-ES",
+ "lang":"es" ,
+ "back":"Atrás",
+ "movie":"Peliculas",
+ "tv":"Series",
+ "populars":"Lo más visto",
+ "search":"Búsqueda",
+ "mymovies":"Mis Peliculas",
+ "options":"Opciones",
+ "producedby":"Productora(s)",
+ "genre":"Generos",
+ "launched":"Lanzamiento",
+ "overview":"Sinopsis",
+ "nothingsaved":"No hay nada aquí... explora y guarda tus peliculas!"
+}
