@@ -8,6 +8,7 @@ const Populars = () => {
   const { searchType,language } = useMyContext();
   const [populars, setpopulars] = useState(null);
   const [loading, setloading] = useState(false);
+
   const GetPopulars = async () => {
     try {
       setloading(true);
@@ -18,7 +19,6 @@ const Populars = () => {
           method: "GET",
           headers: {
             accept: "application/json",
-            Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
           },
         }
       );
@@ -28,7 +28,7 @@ const Populars = () => {
         setpopulars(results);
       }
     } catch (error) {
-      console.log(error);
+      console.log('catch',error);
     } finally {
       setloading(false);
     }
@@ -43,7 +43,7 @@ const Populars = () => {
       <ScrollView  className='bg-zinc-900 flex-[1] ' >
         {!loading ?
           <>
-            <View className='bg-zinc-900' style={{ padding: 1, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-around', }}>
+            <View className='bg-zinc-900 p-1 flex-row flex-wrap justify-around'>
               {
               populars ? populars.map((item:Movie) => <MovieCard key={item.id} movie={item} />) : <Loader />
               }

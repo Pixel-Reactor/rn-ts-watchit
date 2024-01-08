@@ -9,7 +9,7 @@ import en from '../Languages/En.json';
 interface DetailsState {
   on: boolean;
   data: null | Movie; 
-  id: string;
+  id: string | null;
 }
 
 interface MyContextValue {
@@ -26,49 +26,11 @@ const MyContext = createContext<MyContextValue | undefined>(undefined);
 
 export function MyProvider({ children }: { children: ReactNode }){
   const [language, setlanguage] = useState<any>(en);
-  const [details, setdetails] = useState<DetailsState>({ on: false, data: null, id: '' });
+  const [details, setdetails] = useState<DetailsState>({ on: false, data: null, id: null });
   const [searchType, setsearchType] = useState<string>('movie');
 
-  useEffect(() => {
-    const handleDeepLink = async () => {
-      const initialUrl = await Linking.getInitialURL();
-      handleUrl(initialUrl);
-    };
-  
-    const handleUrl = (url) => {
-      if (url) {
-     
-        const parsedUrl = new URL(url);
-        const pathSegments = parsedUrl.pathname.split('/').filter(segment => segment);
-    
-      
-        if (pathSegments.length === 2) {
-          const contentType = pathSegments[0]; 
-          const contentId = pathSegments[1];
-    
-        
-          console.log(`Tipo de contenido: ${contentType}`);
-          console.log(`ID del contenido: ${contentId}`);
-          
-       
-        } else {
-          console.error('URL con estructura desconocida:', url);
-        }
-      }
-    };
-  
-    // Manejar el enlace profundo al cargar la aplicación
-    handleDeepLink();
-  
-    // Suscribirse a los cambios de enlace profundo
-    const subscription = Linking.addEventListener('url', (event) => {
-      handleUrl(event.url);
-    });
-  
-    // Limpiar la suscripción al desmontar el componente
-    return () => subscription.remove();
-  }, []);
 
+  
   
   useEffect(() => {
     const Locales = getLocales();

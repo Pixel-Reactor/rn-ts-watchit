@@ -5,49 +5,17 @@ import { Ionicons } from "@expo/vector-icons";
 import Loader from "../screens/Loader";
 import HandleStorage from "../storage/HandleStorage";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { IntentLauncherAndroid } from 'react-native-intent-launcher';
+import { Movie } from "Interfaces";
 const MovieDetails = () => {
   const { details, setdetails, searchType, language } = useMyContext();
   const [movieDetails, setmovieDetails] = useState(null);
   const [loading, setloading] = useState(false);
   const [isSaved, setisSaved] = useState(false);
 
-  const Share = (id, TypeOf) => {
-    const movieId = id;
 
-    const openAppOrStore = async () => {
-      const appURL = `watchit://${TypeOf}/${movieId}`;
-      const storeURL = 'https://play.google.com/store/apps/details?id=com.tuapp';
-
-      const supported = await Linking.canOpenURL(appURL);
-
-      if (supported) {
-        // La aplicación está instalada, abrir la aplicación con el ID de la película
-        await Linking.openURL(appURL);
-      } else {
-        // La aplicación no está instalada, redirigir al usuario a la tienda de aplicaciones
-        if (Platform.OS === 'android') {
-          Alert.alert(
-            'Aplicación no instalada',
-            '¿Quieres instalar la aplicación?',
-            [
-              { text: 'Cancelar', style: 'cancel' },
-              {
-                text: 'Instalar',
-                onPress: () => Linking.openURL(storeURL),
-              },
-            ]
-          );
-        } else {
-          Linking.openURL(storeURL);
-        }
-      }
-    };
-
-    openAppOrStore();
-  };
 
   useEffect(() => {
+    if(!details.id){return }
     const FetchData = async () => {
       setloading(true);
       try {
@@ -67,7 +35,7 @@ const MovieDetails = () => {
           setmovieDetails(results);
         }
       } catch (error) {
-        console.log(error);
+        console.log("catch",error);
       } finally {
         setloading(false);
       }
@@ -79,7 +47,7 @@ const MovieDetails = () => {
     const get = await AsyncStorage.getItem(searchType);
     if (get && movieDetails) {
       const array = JSON.parse(get);
-      const checkList = array.filter((item) => item.id === movieDetails.id);
+      const checkList = array.filter((item:Movie) => item.id === movieDetails.id);
 
       if (checkList.length) {
         setisSaved(true);
@@ -111,7 +79,7 @@ const MovieDetails = () => {
                   {!movieDetails.backdrop_path ? (
                     <Image
                       className="h-[200] w-full object-contain "
-                      source={require("../../assets/claqueta.png")}
+                      source={require("../assets/claqueta.png")}
                     />
                   ) : (
                     <Image
@@ -201,28 +169,7 @@ const MovieDetails = () => {
                         {isSaved ? "Salvato" : "Salvare nella mia lista"}
                       </Text>
                     </Pressable>
-                    <Pressable
-                     
-                      onPress={() => {
-                      Share(details.data.id,searchType)
-                      }}
-                      style={{ borderRadius: 10 }}
-                      className="justify-items-center py-[5] px-[10] items-center flex-row flex border border-zinc-50/10 my-[6] mr-[10] rounded-[20]"
-                    >
-                      {isSaved ? (
-                        <Ionicons name="checkmark" size={24} color="white" />
-                      ) : (
-                        <Ionicons
-                          name="md-share-outline"
-                          size={24}
-                          color="rgba(255,255,255,0.7)"
-                        />
-                      )}
-
-                      <Text className="text-zinc-50/90">
-                       Compartir
-                      </Text>
-                    </Pressable>
+                 
                   </View>
                   <View className="text-zinc-50 text-lg flex flex-row flex-wrap items-center justify-start">
                     <Text className="text-zinc-50 text-lg font-semibold text-amber-500/80">

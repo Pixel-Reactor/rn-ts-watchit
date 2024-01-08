@@ -46,7 +46,7 @@ const Loader = () => {
       </Animated.View>
       <Image
       className='absolute w-10 h-10'
-        source={require('../../assets/claqueta.png')}
+        source={require('../assets/claqueta.png')}
        
       />
     </View>

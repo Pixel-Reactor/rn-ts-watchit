@@ -10,7 +10,7 @@ const Options = () => {
     <View 
     className='bg-zinc-900 flex-[1] flex-col'>
 
-      <Text className='text-zinc-50 p-5 text-lg font-semibold'>Idioma de búsqueda y app</Text>
+      <Text className='text-zinc-50 p-5 text-lg font-semibold'>{language.option}</Text>
       <View className='flex justify-start px-5 gap-5 flex-row '>
       <TouchableOpacity 
       onPress={()=>setlanguage(it)}
@@ -18,7 +18,7 @@ const Options = () => {
       <Image
         className='w-10 h-10 '
         
-        source={require('../../assets/italian.png')}
+        source={require('../assets/italian.png')}
       />
       </TouchableOpacity>
       <TouchableOpacity
@@ -27,7 +27,7 @@ const Options = () => {
       <Image
         className='w-10 h-10'
         
-        source={require('../../assets/spanish.png')}
+        source={require('../assets/spanish.png')}
       />
       </TouchableOpacity>
       <TouchableOpacity
@@ -36,7 +36,7 @@ const Options = () => {
        <Image
         className='w-10 h-10'
         
-        source={require('../../assets/english.png')}
+        source={require('../assets/english.png')}
       />
       </TouchableOpacity>
       </View>

@@ -15,8 +15,9 @@ export const MainApp = () => {
   const { language } = useMyContext();
 
   return (
+    
     <NavigationContainer>
-      <MovieDetails />
+     
       <Tab.Navigator
         screenOptions={({ route }) => ({
           activeTintColor: "tomato",
@@ -54,7 +55,7 @@ export const MainApp = () => {
             headerStyle: {
               backgroundColor: "rgba(24,24,27,0.99)",
             },
-            headerTitleStyle: { color: "#ffffff", fontSize: 18 },
+            headerTitleStyle: { color: "#ffffff", fontSize: 20 },
             headerStatusBarHeight: 15,
             headerRight: () => <MovieSwitch />,
           }}
@@ -67,7 +68,7 @@ export const MainApp = () => {
             headerStyle: {
               backgroundColor: "rgba(24,24,27,0.99)",
             },
-            headerTitleStyle: { color: "#ffffff", fontSize: 18 },
+            headerTitleStyle: { color: "#ffffff", fontSize: 20 },
 
             headerStatusBarHeight: 15,
             headerRight: () => <MovieSwitch />,
@@ -81,7 +82,7 @@ export const MainApp = () => {
             headerStyle: {
               backgroundColor: "rgba(24,24,27,0.99)",
             },
-            headerTitleStyle: { color: "#ffffff", fontSize: 18 },
+            headerTitleStyle: { color: "#ffffff", fontSize: 20 },
             headerTintColor: "red",
             headerStatusBarHeight: 15,
             headerRight: () => <MovieSwitch />,
@@ -95,13 +96,15 @@ export const MainApp = () => {
             headerStyle: {
               backgroundColor: "rgba(24,24,27,0.99)",
             },
-            headerTitleStyle: { color: "#ffffff", fontSize: 25 },
+            headerTitleStyle: { color: "#ffffff", fontSize: 20 },
             headerTintColor: "red",
             headerStatusBarHeight: 15,
             headerRight: () => <MovieSwitch />,
           }}
-        />
-      </Tab.Navigator>
+        /> 
+       
+      </Tab.Navigator> 
+      <MovieDetails />
     </NavigationContainer>
   );
 };

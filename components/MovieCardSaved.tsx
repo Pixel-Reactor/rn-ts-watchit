@@ -17,7 +17,7 @@ const MovieCardSaved = ({ movie,searchType,setMovies}) => {
                 {!movie.poster_path ?
                 <ImageBackground
                 className='object-cover flex-[1]'
-                source={require('../../assets/claqueta.png')}
+                source={require('../assets/claqueta.png')}
               /> : <ImageBackground
               source={{ uri:  `https://image.tmdb.org/t/p/w500` + movie.poster_path}}
               className='object-cover flex-[1]'

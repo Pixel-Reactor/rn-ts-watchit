@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { View,Text } from "react-native";
 import { useMyContext } from "../context/MyContext";
 
 const MovieSwitch = () => {

@@ -12,5 +12,7 @@
  "genre":"Generos",
  "launched":"Lanzamiento",
  "overview":"Sinopsis",
- "nothingsaved":"No hay nada aquí... explora y guarda tus peliculas!"
+ "nothingsaved":"No hay nada aquí... explora y guarda tus peliculas!",
+ "loading":"Cargando...",
+ "option":"Idioma de búsqueda y app"
 }

@@ -5,7 +5,7 @@ import { useMyContext } from '../context/MyContext';
 const MovieCard = ({ movie }) => {
  
     const {setdetails } = useMyContext();
-   
+
     return (
         <View >
             <TouchableOpacity

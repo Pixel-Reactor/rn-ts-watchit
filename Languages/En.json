@@ -12,5 +12,7 @@
     "genre":"genres",
     "launched":"launched",
     "overview":"Overview",
-    "nothingsaved":"There's nothing saved over here, explore and save your movies to watch it later!"
+    "nothingsaved":"There's nothing saved over here, explore and save your movies to watch it later!",
+    "loading":"Loading...",
+    "option":"App and search language"
 }

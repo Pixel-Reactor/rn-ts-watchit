@@ -30,7 +30,6 @@ const Search = () => {
      
       const data = await res.json();
 
-
       if (data && data.results.length){
           setsearchData(data.results);
           
@@ -39,7 +38,8 @@ const Search = () => {
        
       }
     } catch (error) {
-      console.log(error)
+      console.log('catch',error);
+      setnotFound(true);
       return null
     }finally{
       setloading(false)

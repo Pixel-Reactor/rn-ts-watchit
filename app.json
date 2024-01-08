@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "ts-rn-watchit",
-    "slug": "ts-rn-watchit",
+    "name": "watchit",
+    "slug": "watchit",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "night",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -21,7 +21,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#333333"
-      }
+      },
+      "package": "com.WatchIt"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -29,6 +30,11 @@
     "plugins": [
       "expo-localization"
     ],
-    "scheme": "WatchIt"
+    "scheme": ["watchit"],
+    "extra": {
+      "eas": {
+        "projectId": "42990bf9-085d-4c43-93ed-82cc57ea46a0"
+      }
+    }
   }
 }
